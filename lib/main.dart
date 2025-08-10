@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:innerix/controller/auth_provider.dart';
 import 'package:innerix/controller/best_offers_provider.dart';
@@ -28,7 +27,7 @@ void main() async {
 
   isOnboardingCompleted = prefs.getBool('onboarding_completed') ?? false;
 
-  runApp(DevicePreview(builder: (context) => const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -49,7 +48,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        builder: DevicePreview.appBuilder,
         useInheritedMediaQuery: true,
         theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFF9F9F9)),
         home: isOnboardingCompleted
